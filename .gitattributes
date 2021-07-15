@@ -1,1 +1,2 @@
-* linguist-vendored
+
+*.rb linguist-detectable=true

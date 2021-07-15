@@ -1,5 +1,5 @@
 <main>
-  <container>
+  <div class="container">
     <div class="row">
       <div class="col-md-3">
         <%= render "posts/userinfo", post: @new_post %>
@@ -11,6 +11,7 @@
               <tr>
                 <th>タイトル</th>
                 <th>本文</th>
+                <th></th>
                 <th></th>
               </tr>
             </thead>
@@ -24,6 +25,11 @@
                 </td>
                 <td>
                   <% if @user == current_user %>
+                    <%= link_to "編集", edit_post_path(@post.id), class: "btn btn-sm btn-primary" %>
+                  <% end %>
+                </td>
+                <td>
+                  <% if @user == current_user %>
                     <%= link_to "削除", post_path(@post.id), method: :delete, 'data-confirm' => "本当に消しますか？", class: "btn btn-sm btn-danger" %>
                   <% end %>
                 </td>
@@ -32,6 +38,6 @@
           </table>
       </div>
     </div>
-  </container>
+  </div>
 </main>
 

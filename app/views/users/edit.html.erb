@@ -1,0 +1,23 @@
+<main>
+  <div class="container">
+    <div class="row">
+      <div class="mx-auto">
+      <h1>ユーザー編集</h1>
+      <%= form_with model: @user, local:true do |f| %>
+              <div class="field">
+                <%= f.label :name %><br />
+                <%= f.text_field :name, autofocus: true %>
+              </div>
+              <div class="field">
+                <%= attachment_image_tag @user, :profile_image, :fill, 60,60, fallback: "no_image.jpg", size: '60x60' %><br />
+                <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+              </div>
+              
+              <div class="actions">
+              <%= f.submit "変更を保存", class: "btn btn-success" %>
+              </div>
+            <% end %>
+      </div>
+    </div>
+  </div>
+</main>

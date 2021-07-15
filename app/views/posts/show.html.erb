@@ -2,13 +2,14 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <%= render "posts/userinfo", post: @new_post %>
+        <%= render "posts/userinfo", post: @new_post, user: @user %>
       </div>
       <div class="col-md-8 offset-md-1">
         <h1>投稿詳細</h1>
           <table class="table">
             <thead>
               <tr>
+                <th></th>
                 <th>タイトル</th>
                 <th>本文</th>
                 <th></th>
@@ -17,6 +18,9 @@
             </thead>
             <tbody>
               <tr>
+                <td>
+                  <%= attachment_image_tag @post.user, :profile_image, :fill, 50, 50, format: 'jpeg', fallback: "no_image.jpg", size: '50x50' %>
+                </td>
                 <td>
                   <%= @post.title %>
                 </td>

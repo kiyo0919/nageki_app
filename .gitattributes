@@ -1,2 +1,1 @@
-*.c linguist-detectable=false 
-*.shell linguist-detectable=false 
+/* linguist-vendored
